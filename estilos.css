@@ -16,7 +16,7 @@ body {
   font-size: 16px;
 }
 #inicio {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/imagen-inicio.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/imagen-inicio.jpg");
   background-size: cover;
   background-position: center center;
   height: 100vh;
@@ -423,12 +423,17 @@ body {
   background-color: #535353; /* Cambia el color al hacer hover */
 }
 
-/* Contenido adicional (expansión) */
 .contenido-mas {
-  display: none;
+  display: none; /* Mantén el contenido oculto por defecto */
   margin-top: 15px; /* Espacio entre el contenido y el botón */
+  text-align: justify; /* Justificar el texto dentro del contenedor */
 }
 
+/* Asegúrate de que el texto dentro del contenedor tenga margen */
+.contenido-mas p {
+  margin: 0; /* Ajusta el margen según sea necesario */
+  line-height: 1.6; /* Ajusta el interlineado para una mejor legibilidad */
+}
 
 
 
