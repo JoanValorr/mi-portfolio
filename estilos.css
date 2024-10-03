@@ -15,8 +15,50 @@ body {
   color: #333;
   font-size: 16px;
 }
+/* Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 100px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: rgb(202, 202, 202);
+}
 #inicio {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/imagen-inicio.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/images/imagen-inicio.jpg");
   background-size: cover;
   background-position: center center;
   height: 100vh;
@@ -30,59 +72,7 @@ body {
   transition: background-color 0.3s ease;
   user-select: none;
 }
-#inicio .contenido header .contenido-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-#inicio .contenido header .contenido-header h1 {
-  text-align: left;
-  color: rgb(238, 238, 238);
-  font-size: 24px;
-  margin-right: 400px;
-}
-#inicio .contenido header .contenido-header nav {
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-start;
-}
-#inicio .contenido header .contenido-header nav ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-}
-#inicio .contenido header .contenido-header nav ul li {
-  margin: 0 20px;
-}
-#inicio .contenido header .contenido-header nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 400;
-  transition: transform 0.3s ease, color 0.3s ease;
-  padding: 8px 12px;
-  border-radius: 4px;
-}
-#inicio .contenido header .contenido-header nav ul li a:hover {
-  color: rgb(238, 238, 238);
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
-}
-#inicio .contenido header .contenido-header .redes {
-  display: flex;
-  align-items: center;
-  margin-right: 30px;
-}
-#inicio .contenido header .contenido-header .redes a {
-  color: white;
-  margin-left: 10px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-#inicio .contenido header .contenido-header .redes a:hover {
-  color: rgb(238, 238, 238);
-  transform: scale(1.1);
-}
+
 #inicio .contenido .presentacion {
   max-width: 1100px;
   height: 100vh;
@@ -257,7 +247,7 @@ body {
   padding: 50px;
   margin-bottom: 20px;
   width: 1000px;
-  margin-left: 450px;
+  margin-left: 250px;
   user-select: none;
 }
 .proyecto img {
@@ -319,8 +309,10 @@ body {
   background-color: rgb(201, 198, 198);
 }
 #contacto .botones .boton1 {
-  margin-left: 230px;
-  margin-right: 80px;
+  margin-left: 10px;
+}
+#contacto .botones .boton2 {
+  margin-left: 170px;
 }
 #contacto .texto-contacto {
   margin-left: 500px;
@@ -392,48 +384,3 @@ body {
     display:block;
   }
 }
-
-
-/* Estilo del botón "ver más" */
-.ver-mas {
-  background-color: #9e9c9c3d;
-  color: rgb(0, 0, 0); /* Color del texto */
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 50%; /* Hacer el botón redondo */
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin: 20px auto; /* Centrar el botón horizontalmente */
-  z-index: 1; /* Asegura que el botón esté sobre la línea */
-}
-
-/* Icono dentro del botón */
-.ver-mas i {
-  font-size: 16px;
-  transition: transform 0.3s ease; /* Transición para la rotación de la flecha */
-}
-
-/* Cambio de color al hacer hover */
-.ver-mas:hover {
-  background-color: #535353; /* Cambia el color al hacer hover */
-}
-
-.contenido-mas {
-  display: none; /* Mantén el contenido oculto por defecto */
-  margin-top: 15px; /* Espacio entre el contenido y el botón */
-  text-align: justify; /* Justificar el texto dentro del contenedor */
-}
-
-/* Asegúrate de que el texto dentro del contenedor tenga margen */
-.contenido-mas p {
-  margin: 0; /* Ajusta el margen según sea necesario */
-  line-height: 1.6; /* Ajusta el interlineado para una mejor legibilidad */
-}
-
-
-
