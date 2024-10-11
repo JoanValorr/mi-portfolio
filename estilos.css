@@ -266,6 +266,11 @@ header nav a:hover {
   margin: 30px 0 0;
   color: #666;
 }
+.proyecto a{
+  margin: 30px 0 0;
+  color: #666;  
+  text-decoration: none;
+}
 .proyecto .roll:hover {
   cursor: url("images/espada-cursor.png"), auto; /* Cursor de espada con fallback */
 }
