@@ -14,6 +14,8 @@ body {
   background-color: #f4f4f4;
   color: #333;
   font-size: 16px;
+  cursor: url("images/cursor.png"), auto; /* Cambia el cursor a la imagen de espada */
+
 }
 /* Encabezado */
 header {
@@ -100,20 +102,53 @@ header nav a:hover {
   font-size: 18px;
   text-align: justify;
 }
-#inicio .contenido .presentacion a {
+a.presentation-button {
+  position: relative;
+  padding: 10px 20px; /* Ajusta el padding según lo que necesites */
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: white;
   text-decoration: none;
-  display: inline-block;
-  margin: 25px;
-  padding: 20px 25px;
-  border: 2px solid #fff;
-  border-radius: 50px;
-  color: #fff;
-  font-weight: bold;
-  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0;
+  z-index: 1;
 }
-#inicio .contenido .presentacion a:hover {
-  background-color: rgb(138, 135, 135);
+
+a.presentation-button:hover::before,
+a.presentation-button:hover::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, white, transparent);
+  opacity: 1;
+  z-index: -1;
 }
+
+a.presentation-button::before {
+  top: 0;
+  left: -100%;
+  animation: borderTopAnim 3s ease infinite;
+}
+
+a.presentation-button::after {
+  bottom: 0;
+  right: -100%;
+  animation: borderBottomAnim 3s ease infinite;
+}
+
+@keyframes borderTopAnim {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes borderBottomAnim {
+  0% { right: -100%; }
+  100% { right: 100%; }
+}
+
 #icono-nav {
   color: #fff;
   display: none;
@@ -271,9 +306,7 @@ header nav a:hover {
   color: #666;  
   text-decoration: none;
 }
-.proyecto .roll:hover {
-  cursor: url("images/espada-cursor.png"), auto; /* Cursor de espada con fallback */
-}
+
 .proyecto .texto {
   flex: 1;
 }
@@ -297,28 +330,7 @@ header nav a:hover {
   font-size: 0.9em;
   user-select: none;
 }
-#contacto .botones a {
-  padding-top: 30px;
-  display: inline-block;
-  text-decoration: none;
-  color: black;
-  border-radius: 30px;
-  padding: 10px 30px;
-  border: 1px solid black;
-  margin-top: 30px;
-  transition: 0.5s;
-  user-select: none;
-  align-items: center;
-}
-#contacto .botones a:hover {
-  background-color: rgb(201, 198, 198);
-}
-#contacto .botones .boton1 {
-  margin-left: 10px;
-}
-#contacto .botones .boton2 {
-  margin-left: 170px;
-}
+
 #contacto .texto-contacto {
   margin-left: 500px;
   margin-right: 500px;
@@ -361,7 +373,54 @@ header nav a:hover {
 #footerprincipal .redes a:hover {
   transform: scale(1.1);
 }
+a.descarga-button {
+  position: relative;
+  display: inline-block; /* Asegura que el botón no ocupe más espacio del necesario */
+  padding: 5px 10px; /* Tamaño más pequeño */
+  font-size: 1rem; /* Reduce el tamaño del texto */
+  background-color: transparent;
+  color: black; /* Color del texto en negro */
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0;
+  z-index: 1;
+  margin-top: 10px; /* Añade un margen superior para separarlo del texto */
+}
 
+a.descarga-button:hover::before,
+a.descarga-button:hover::after {
+  content: '';
+  position: absolute;
+  height: 2px; /* Reduce el grosor del borde animado */
+  width: 100%;
+  background: linear-gradient(to right, transparent, black, transparent); /* Bordes animados en negro */
+  opacity: 1;
+  z-index: -1;
+}
+
+a.descarga-button::before {
+  top: 0;
+  left: -100%;
+  animation: borderTopAnim 3s ease infinite;
+}
+
+a.descarga-button::after {
+  bottom: 0;
+  right: -100%;
+  animation: borderBottomAnim 3s ease infinite;
+}
+
+@keyframes borderTopAnim {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes borderBottomAnim {
+  0% { right: -100%; }
+  100% { right: 100%; }
+}
 @media screen and (max-width: 800px) {
   .redes{
     display:none;
